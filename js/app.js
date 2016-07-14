@@ -6,7 +6,7 @@ angular.module('jm.i18next')
             lng: 'en-US',
             useCookie: true,
             useLocalStorage: false,
-            resGetPath: "../i18n/__ns__-__lng__.js",
+            resGetPath: "i18n/__ns__-__lng__.js",
             ns: {
                 namespaces: ['myapp'],
                 defaultNs: 'myapp'
