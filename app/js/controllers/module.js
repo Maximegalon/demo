@@ -1,1 +1,1 @@
-﻿angular.module('myApp.controllers', ['ngResource']);
+﻿angular.module('myApp.controllers', ['ngResource', 'chart.js']);
