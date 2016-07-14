@@ -33,5 +33,10 @@ angular.module('myApp', ['jm.i18next', 'ui.router', 'ngSanitize', 'ngResource', 
                 templateUrl: "templates/expand.html",
                 controller: "expandController"
             })
+            .state("graph", {
+                url: "/graph",
+                templateUrl: "templates/expand.html",
+                controller: "expandController"
+            })
         $urlRouterProvider.otherwise("/estimate");
     }]);
