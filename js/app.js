@@ -15,27 +15,28 @@ angular.module('jm.i18next')
     }
 );
 
-angular.module('myApp', ['jm.i18next', 'ui.router', 'ngSanitize', 'ngResource', 'ngRoute', 'myApp.controllers', 'myApp.services'])
+angular.module('myApp', ['jm.i18next', 'ui.router', 'myApp.controllers', 'myApp.services', 'templates'])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state("estimate", {
                 url: "/estimate",
-                templateUrl: "templates/estimate.html",
+                // TODO: Prefix templates with a module like seperation between site and common templates
+                templateUrl: 'estimate.html',
                 controller: "estimateController"
             })
             .state("read", {
                 url: "/read",
-                templateUrl: "templates/read.html",
+                templateUrl: 'read.html',
                 controller: "readController"
             })
             .state("expand", {
                 url: "/expand",
-                templateUrl: "templates/expand.html",
+                templateUrl: 'expand.html',
                 controller: "expandController"
             })
             .state("graph", {
                 url: "/graph",
-                templateUrl: "templates/graph.html",
+                templateUrl: 'graph.html',
                 controller: "graphController"
             })
         $urlRouterProvider.otherwise("/graph");
