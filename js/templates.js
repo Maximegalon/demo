@@ -74,14 +74,15 @@ angular.module("expand.html", []).run(["$templateCache", function($templateCache
     "<ul>\n" +
     "    <li>Minimize and obfuscation the JavaScript code</li>\n" +
     "    <li>Use the foundation grid system, not bootstrap</li>\n" +
-    "    <li>Break up functionality into directives</li>\n" +
-    "    <li>Better organize files into folders/modules and keep 3rd party vendor assets better organized</li>\n" +
-    "    <li>Use template caching</li>\n" +
-    "    <li>Remove various, unnecessary things I left in or complete using them</li>\n" +
+    "    <li>Break up functionality into directives.  Presently no directives exist.</li>\n" +
+    "    <li>Better organize files into folders/modules and keep 3rd party vendor assets better organized with production ready versions.</li>\n" +
+    "    <li>Remove a few various, unnecessary things I left in or complete using them</li>\n" +
     "    <li>Add automated, acceptance tests and ensure complete code coverage with a tool including the use of mock data</li>\n" +
     "    <li>It needs the \"hamburger\" menu item at a mobile resolution</li>\n" +
     "    <li>A real CSS style sheet, compiled from SASS file(s)</li>\n" +
     "    <li>Have a nightly build that ran all server and client side tests and sent a report via email</li>\n" +
+    "    <li>The expand page layout is only OK, and doesn't look great at all resolutions.</li>\n" +
+    "    <li>The form fields are very basic obviously, and needs a lot better client-side validation.</li>\n" +
     "    <li>Much, much, more</li>\n" +
     "</ul>");
 }]);
@@ -145,23 +146,16 @@ angular.module("read.html", []).run(["$templateCache", function($templateCache) 
     "    Some additions to briefly touch on:\n" +
     "    <ul>\n" +
     "        <li>I replaced the stock routing with ui-router, because it is awesome.  I don't have any nested views or anything fancy.</li>\n" +
+    "        <li>I do use template caching</li>\n" +
     "        <li>The intro block on the left is sort of I18Ned (English only).  I didn't do all the text or another language for the sake of time.</li>\n" +
     "    </ul>\n" +
     "\n" +
     "    <br/>\n" +
     "    Tools:\n" +
     "    <ul>\n" +
-    "        <li>I could have had node host the site, but I used the free IIS Express web server.  Primarily because I still prefer Visual Studio as an IDE.</li>\n" +
-    "        <li>I did use node's package manager to pull everything</li>\n" +
-    "    </ul>\n" +
-    "\n" +
-    "    <br />\n" +
-    "    Things to improve:\n" +
-    "    <ul>\n" +
-    "        <li>The expand page layout is only OK, and doesn't look great at all resolutions.</li>\n" +
-    "        <li>I'd probably go with a different grid layout system.</li>\n" +
-    "        <li>The form fields are very basic obviously, and needs better client-side validation.  For example, I wouldn't let the user add two+ spouses.</li>\n" +
-    "        <li>I probably should have asked, it seemed like the requirment was just to use show the costs (not so much the salary).  So I barely touched on that, and didn't show it.</li>\n" +
+    "        <li>I used the free IIS Express web server.  Primarily because I still prefer Visual Studio as an IDE.</li>\n" +
+    "        <li>The site is hosted for free with its soruce on Github</li>\n" +
+    "        <li>I used node's package manager to pull everything</li>\n" +
     "    </ul>\n" +
     "</p>");
 }]);
