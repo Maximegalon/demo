@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>HR Interactive Resource Estimator for Monetary Equations</title>
     <link rel="stylesheet" href="css/app.css"/>
-    <link href="./assets/css/bootstrap.css" rel="stylesheet">
-    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -14,6 +14,8 @@
                 <a class="brand" href="#">SPA JS MVC Example</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
+                        <!-- TODO: Make this menu a directive -->
+                        <!-- TODO: Use state not a link -->
                         <li><a href="#/graph">Graph Random Numbers</a></li>
                         <li><a href="#/estimate">Estimate Benefits</a></li>
                         <li><a href="#/read">Read About This App</a></li>
@@ -41,7 +43,7 @@
     </div>
 
     <!-- NOTE: In production this would probably be bundled and minimized in some way -->
-    <script src="./lib/chart.min.js"></script>
+    <script src="./lib/charts/chart.min.js"></script>
     <script src="./lib/angular/angular.js"></script>
     <script src="./lib/angular/angular-ui-router.js"></script>    
     <script src="./lib/angular/angular-route.js"></script>
@@ -50,6 +52,20 @@
     <script src="./lib/angular/angular-chart.min.js"></script>      
     <script src="./lib/angular/i18next.js"></script>
     <script src="./lib/angular/ng-i18next.js"></script> 
+    <script src="./lib/bootstrap/js/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-modal.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-tab.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-popover.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-button.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-typeahead.js"></script>
+    <script src="./js/templates.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/services/module.js"></script>
     <script src="./js/services/cost-service.js"></script>
@@ -60,18 +76,5 @@
     <script src="./js/controllers/expand-controller.js"></script>      
     <script src="./js/controllers/graph-controller.js"></script>      
     <script src="./js/directives/directives.js"></script>
-    <script src="./assets/js/jquery.js"></script>
-    <script src="./assets/js/bootstrap-transition.js"></script>
-    <script src="./assets/js/bootstrap-alert.js"></script>
-    <script src="./assets/js/bootstrap-modal.js"></script>
-    <script src="./assets/js/bootstrap-dropdown.js"></script>
-    <script src="./assets/js/bootstrap-scrollspy.js"></script>
-    <script src="./assets/js/bootstrap-tab.js"></script>
-    <script src="./assets/js/bootstrap-tooltip.js"></script>
-    <script src="./assets/js/bootstrap-popover.js"></script>
-    <script src="./assets/js/bootstrap-button.js"></script>
-    <script src="./assets/js/bootstrap-collapse.js"></script>
-    <script src="./assets/js/bootstrap-carousel.js"></script>
-    <script src="./assets/js/bootstrap-typeahead.js"></script>
 </body>
 </html>
