@@ -15,7 +15,7 @@ angular.module('jm.i18next')
     }
 );
 
-angular.module('myApp', ['jm.i18next', 'ui.router', 'myApp.controllers', 'myApp.services', 'templates'])
+angular.module('myApp', ['jm.i18next', 'ui.router', 'ngMockE2E', 'ui.bootstrap', 'myApp.controllers', 'myApp.services', 'templates'])  
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state("estimate", {
@@ -39,5 +39,18 @@ angular.module('myApp', ['jm.i18next', 'ui.router', 'myApp.controllers', 'myApp.
                 templateUrl: 'graph.html',
                 controller: "graphController"
             })
-        $urlRouterProvider.otherwise("/graph");
+            .state("invite", {
+                url: "/invite",
+                templateUrl: 'invite.html',
+                controller: "inviteController"
+            })
+        $urlRouterProvider.otherwise("/invite");
     }]);
+
+// NOTE: This would not be included when the project is built and as such probably not located here
+angular.module('myApp')
+    .run(function ($httpBackend, inviteService) {
+        $httpBackend.whenGET('/people').respond(function (method, url, data) {                       
+            return [200, globalPeopleDummyData, {}];
+        });
+    });

@@ -10,8 +10,8 @@ module.exports = function (grunt) {
         watch: {
             "compass": {
                 "files": [
-                    "grails-app/assets/stylesheets/**/*.sass",
-                    "grails-app/assets/stylesheets/**/*.scss"],
+                    "app/assets/stylesheets/**/*.sass",
+                    "app/assets/stylesheets/**/*.scss"],
                 "options": {
                     interrupt: true,
                     "customPort": false,
@@ -19,7 +19,7 @@ module.exports = function (grunt) {
                     "spawn": true
                 },
                 "tasks": [
-                    "compassClean", "compass:promo"
+                    "compassClean"
                 ]
             },
             html2js: {
@@ -33,10 +33,10 @@ module.exports = function (grunt) {
             }
         },
         compass: {
-            "promo": {
+            "sass": {
                 "options": {
-                    "sassDir": "grails-app/assets/stylesheets",
-                    "cssDir": "grails-app/assets/stylesheets",
+                    "sassDir": "sass/assets/stylesheets",
+                    "cssDir": "sass/assets/stylesheets",
                     "specify": ["grails-app/assets/stylesheets/base.sass"]
                 }
             }
