@@ -1,0 +1,37 @@
+﻿<div class="row">
+    <div class="well span12">
+        <h3>Graphing ExsTensive JsOn Browser</h3>
+        <label>Simple example of databinding and UI elements</label>
+    </div>
+</div>
+
+<div class="row">    
+    <div class="well span6">
+        <input type="text" ng-model="vm.numberOfRandomNumbers" placeholder="Please enter a number from 1 to 10" style="width: 300px;" />
+
+        <!-- TODO: Do not use a style attribute on the buttons and inputs -->
+        <button ng-click="generateNumbers()" value="Generate Numbers" style="vertical-align: top;" >Click Me</button>
+    </div>
+
+    <div class="well span6" ng-if="showResults()">
+        Here are your results:&nbsp;
+
+        <span ng-repeat="randomnumber in vm.randonNumbers track by $index">
+            {{randomnumber}}<span ng-if="!$last">,</span>
+        </span>
+    </div>
+</div>    
+
+<div class="row" ng-if="showResults()">
+    <div class="well span12">
+        <input type="text" ng-model="vm.minimumValueToDisplay" placeholder="Please select a minimum value to show" style="width: 300px;" />
+
+        <button ng-click="filterNumbers()" value="Generate Numbers" style="vertical-align: top;" ng-disabled="vm.minimumValueToDisplay == ''">Click Me</button>
+
+        <br /><br />
+
+        <canvas id="bar" class="chart chart-bar" chart-data="vm.graphData" chart-labels="vm.labels" chart-series="vm.series"></canvas>
+
+        <div ng-if="vm.graphData[0].length == 0">All random numbers have been hidden</div>
+    </div>
+</div>

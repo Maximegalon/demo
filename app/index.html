@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>HR Interactive Resource Estimator for Monetary Equations</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link href="./lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="#">SPA JS MVC Example</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <!-- TODO: Make this menu a directive -->
+                        <!-- TODO: Use state not a link -->
+                        <li><a href="#/graph">Graph Random Numbers</a></li>
+                        <li><a href="#/estimate">Estimate Benefits</a></li>
+                        <li><a href="#/invite">Invite People</a></li>
+                        <li><a href="#/read">Read About This App</a></li>
+                        <li><a href="#/expand">Expand This App</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="well sidebar-nav" style="padding: 19px;" ng-bind="'myapp.labels.sideBar' | i18next"></div>
+            </div>
+            <div class="span1"></div>
+            <div class="span8">
+               <div ui-view></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>&copy; Ed Hassinger 2017 - <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">email@edhassinger.net</a></footer>        
+    </div>
+
+    <!-- NOTE: In production this would probably be bundled and minimized in some way.  There are modules that will look at items between specifiers in the page and do that. The first item would never be included however. -->
+    <script src="/test/data/people.js"></script>
+    <script src="./lib/charts/chart.min.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/angular/angular-ui-router.js"></script>    
+    <script src="./lib/angular/angular-route.js"></script>
+    <script src="./lib/angular/angular-sanitize.js"></script>
+    <script src="./lib/angular/angular-resource.js"></script>
+    <script src="./lib/angular/angular-chart.min.js"></script>         
+    <script src="./lib/angular/i18next.js"></script>
+    <script src="./lib/angular/ng-i18next.js"></script> 
+    <script src="./lib/angular/angular-mocks.js"></script>      
+    <script src="./lib/bootstrap/js/jquery.js"></script>
+    <script src="./lib/bootstrap/js/ui-bootstrap.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-modal.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-tab.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-popover.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-button.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-typeahead.js"></script>
+    <script src="./js/templates.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/services/module.js"></script>
+    <script src="./js/services/cost-service.js"></script>
+    <script src="./js/services/number-service.js"></script>
+    <script src="./js/services/invite-service.js"></script>
+    <script src="./js/controllers/module.js"></script>
+    <script src="./js/controllers/estimate-controller.js"></script>
+    <script src="./js/controllers/read-controller.js"></script>      
+    <script src="./js/controllers/expand-controller.js"></script>      
+    <script src="./js/controllers/graph-controller.js"></script>      
+    <script src="./js/controllers/invite-controller.js"></script>
+    <script src="./js/directives/directives.js"></script>
+</body>
+</html>
