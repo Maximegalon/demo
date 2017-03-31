@@ -11,8 +11,8 @@ angular.module('myApp.controllers')
         // NOTE: Which of the two peopl are we targeting and what is the value currently selected
         $scope.vm.activePerson = 0;
         $scope.vm.selectedPerson = "";
-        $scope.vm.selectedPerson1Image = "";
-        $scope.vm.selectedPerson2Image = "";
+        $scope.vm.selectedPerson1Image = "http://www.clipartkid.com/images/25/head-outline-clip-art-at-clker-com-vector-clip-art-online-royalty-wCNByg-clipart.png";
+        $scope.vm.selectedPerson2Image = "http://www.clipartkid.com/images/25/head-outline-clip-art-at-clker-com-vector-clip-art-online-royalty-wCNByg-clipart.png";
         $scope.vm.pageIsLoading = true;
 
         // NOTE: All the data we would submit for a save
@@ -62,7 +62,8 @@ angular.module('myApp.controllers')
 
                     // NOTE: Reset the page to repeat the process
                     $scope.vm.activePerson = 0;
-                    $scope.vm.selectedPerson = $scope.vm.selectedPerson1Image = $scope.vm.selectedPerson2Image = "";
+                    $scope.vm.selectedPerson = "";
+                    $scope.vm.selectedPerson1Image = $scope.vm.selectedPerson2Image = "http://www.clipartkid.com/images/25/head-outline-clip-art-at-clker-com-vector-clip-art-online-royalty-wCNByg-clipart.png";
                     $scope.vm.data = {};
                 }
 
