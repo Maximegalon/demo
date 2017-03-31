@@ -53,4 +53,6 @@ angular.module('myApp')
         $httpBackend.whenGET('/people').respond(function (method, url, data) {                       
             return [200, globalPeopleDummyData, {}];
         });
+
+        $httpBackend.whenGET(/^\w+.*/).passThrough();
     });
