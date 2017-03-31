@@ -1,4 +1,4 @@
-angular.module('templates', ['estimate.html', 'expand.html', 'graph.html', 'read.html']);
+angular.module('templates', ['estimate.html', 'expand.html', 'graph.html', 'invite.html', 'read.html']);
 
 angular.module("estimate.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("estimate.html",
@@ -72,8 +72,10 @@ angular.module("expand.html", []).run(["$templateCache", function($templateCache
     "<p>Things that I would expand upon before moving into production</p>\n" +
     "    \n" +
     "<ul>\n" +
-    "    <li>Minimize and obfuscation the JavaScript code</li>\n" +
-    "    <li>Use the foundation grid system, not bootstrap</li>\n" +
+    "    <li>Concatenate, obfuscation and minimize everything to a dist folder for testing and rollout</li>\n" +
+    "    <li>Use browsersync to see changes in realtime in multiple sizes/resolutions</li>\n" +
+    "    <li>Much more mock data and a better mock back end for http calls</li>\n" +
+    "    <li>Perhaps use the foundation grid system, not bootstrap</li>\n" +
     "    <li>Break up functionality into directives.  Presently no directives exist.</li>\n" +
     "    <li>Better organize files into folders/modules and keep 3rd party vendor assets better organized with production ready versions.</li>\n" +
     "    <li>Remove a few various, unnecessary things I left in or complete using them</li>\n" +
@@ -126,6 +128,75 @@ angular.module("graph.html", []).run(["$templateCache", function($templateCache)
     "        <div ng-if=\"vm.graphData[0].length == 0\">All random numbers have been hidden</div>\n" +
     "    </div>\n" +
     "</div>");
+}]);
+
+angular.module("invite.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("invite.html",
+    "<!-- TODO: Put this in a SASS file and convert all the style attributes to classes as needed -->\n" +
+    "<style>\n" +
+    "    .selectedPerson {background-color: red}\n" +
+    "</style>\n" +
+    "\n" +
+    "<div>\n" +
+    "    <h1 style=\"text-align: center\">Ask for Fralix</h1>\n" +
+    "\n" +
+    "    <hr />\n" +
+    "\n" +
+    "    <!-- TODO: Might want to use a flexbox or something here -->\n" +
+    "    <div class=\"row\">\n" +
+    "        <div class=\"well span4\" style=\"text-align: center; height: 120px;\" ng-class=\"{selectedPerson: vm.activePerson == 1}\" ng-click=\"selectPerson(1)\">\n" +
+    "            <img src=\"{{vm.selectedPerson1Image}}\" style=\"height: 80px; width: 80px;\" />\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"well span4\" style=\"text-align: center; height: 120px;\">\n" +
+    "            <h3>Make a Fralix intro to</h3>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"well span4\" style=\"text-align: center; height: 120px;\" ng-class=\"{selectedPerson: vm.activePerson == 2}\" ng-click=\"selectPerson(2)\">\n" +
+    "            <img src=\"{{vm.selectedPerson2Image}}\" style=\"height: 80px; width: 80px;\" />\n" +
+    "        </div>\n" +
+    "    </div>    \n" +
+    "\n" +
+    "    <!-- TODO: Even if we could get away with downloading all people, we would need to update this angular filter so someone can't select the same person twice.  Also, it would be a handy feature to filter out people that are already selected/saved on the server -->\n" +
+    "    <div ng-if=\"vm.activePerson != 0\">\n" +
+    "        <!-- TODO: All the text on this template needs to be I18Ned (very few parts of this application have it but it exists) -->        \n" +
+    "        Please type some information to find the person\n" +
+    "        <input class=\"input-large\" style=\"width: 100%\" type=\"text\" ng-model=\"vm.selectedPerson\" typeahead-template-url=\"columnTwo.html\" typeahead=\"person for person in vm.peopleForConnecting | filter:$viewValue | limitTo:4\" typeahead-on-select=\"onPersonSelect($item, $model, $label)\">\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"row\">\n" +
+    "        <div class=\"well span12\">\n" +
+    "            <div>Subject:</div>\n" +
+    "            <div>\n" +
+    "                <textarea style=\"width: 100%\" ng-model=\"vm.data.subject\"></textarea>\n" +
+    "            </div>\n" +
+    "            <div>\n" +
+    "                Message:\n" +
+    "            </div>\n" +
+    "            <div>\n" +
+    "                <textarea style=\"width: 100%\" ng-model=\"vm.data.message\"></textarea>\n" +
+    "            </div>\n" +
+    "            <div style=\"text-align: center\">\n" +
+    "                <button type=\"reset\" ng-click=\"save()\" ng-disabled=\"isSaveDisabled()\">Send</button>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "\n" +
+    "<!-- TODO: Put this in a template file for caching -->\n" +
+    "<script type=\"text/ng-template\" id=\"columnTwo.html\">\n" +
+    "    <div class=\"row\">\n" +
+    "        <div class=\"span2\">\n" +
+    "            <img src=\"{{match.model.image_url}}\" />\n" +
+    "        </div>\n" +
+    "        <div class=\"span10\">\n" +
+    "            {{ match.model.first_name }} {{ match.model.last_name }}<br />\n" +
+    "            {{ match.model.company }}\n" +
+    "            {{ match.model.title }}\n" +
+    "            <br /><br />\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</script>");
 }]);
 
 angular.module("read.html", []).run(["$templateCache", function($templateCache) {
