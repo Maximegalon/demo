@@ -10,7 +10,7 @@
     "ui-router": "^1.0.0-alpha.3",
     "angular": "^1.5.5",
     "ng-i18next": "^0.5.2",
-    "i18next": "^2.5.1",
+    "i18next": "^19.0.0",
     "karma": "^0.13.22",
     "angular-mocks": "^1.5.5",
     "karma-jasmine": "^0.3.8",
